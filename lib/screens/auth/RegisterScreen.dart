@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     setState(() => _isLoading = true);
 
     try {
-      await supabase.auth.signUp(
+      final response = await supabase.auth.signUp(
         email: emailController.text,
         password: passwordController.text,
         data: {
@@ -50,6 +50,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           'phone': phoneController.text, // Add the phone field
         },
       );
+
+      print(response.toString());
 
       Fluttertoast.showToast(msg: "Registration Successful!");
       signIn();
