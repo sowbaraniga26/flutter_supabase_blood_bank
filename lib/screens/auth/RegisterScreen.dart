@@ -48,6 +48,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         data: {
           'name': nameController.text, // Add the name field
           'phone': phoneController.text, // Add the phone field
+          'user_type': 'recipient', // Add the phone field
+          'blood_group': 'A+', // Add the phone field
+          'location': 'Cuddalore', // Add the phone field
+          'lat': phoneController.text, // Add the phone field
+          'lng': phoneController.text, // Add the phone field
         },
       );
 
@@ -58,6 +63,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     } catch (error) {
       Fluttertoast.showToast(msg: "Error: ${error.toString()}");
       print("Error: ${error.toString()}");
+      print(emailController.text);
+      print(passwordController.text);
+      print(nameController.text);
+      print(phoneController.text);
     }
     setState(() => _isLoading = false);
   }
