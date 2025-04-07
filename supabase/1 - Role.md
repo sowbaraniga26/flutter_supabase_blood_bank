@@ -9,6 +9,6 @@ CREATE TABLE roles (
 ```sql
 INSERT INTO roles (name) VALUES
 ('admin'),
-('freelancer'),
-('customer');
+('recipient'),
+('donor');
 ```
